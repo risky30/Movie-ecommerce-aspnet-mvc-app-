@@ -1,0 +1,87 @@
+﻿@*
+    create actor
+*@
+
+@model Actor
+
+@{
+    ViewData["Title"] = "Add a new actor";
+}
+<div class="hero common-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1> Create Actor</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Back</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span> actor listing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-single movie_list">
+    <div class="container">
+        <div class="row ipad-width2">
+
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="searh-form">
+                        <h4 class="sb-title">Add a new movie</h4>
+                        <form class="form-style-1" asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-md-12 form-it">
+                                    <img id="ProfilePicturePreview" />
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label asp-for="ProfilePictureURL"></label>
+                                    <input asp-for="ProfilePictureURL"/>
+                                    <span asp-validation-for="ProfilePictureURL" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label asp-for="FullName">Actor Name</label>
+                                    <input asp-for="FullName"/>
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label asp-for="Bio">Biography</label>
+                                    <input asp-for="Bio"/>
+                                    <span asp-validation-for="Bio" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">                              
+                                    <a asp-action="Index" class="redbtn" style="margin:15px; float:left">
+                                        <i class="fa fa-rotate-back"></i>
+                                        Show All
+                                    </a>
+                                    <input class="redbtn" type="submit" value="Save" style="margin:15px; float:right" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#ProfilePictureURL").val();
+
+        })
+        
+        $("#ProfilePictureURL").on("change", function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $(this).val();           
+        })
+    </script>
+}
+
+

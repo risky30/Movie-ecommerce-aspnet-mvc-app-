@@ -1,0 +1,84 @@
+﻿@*
+    delete actor
+*@
+
+@model Actor
+
+@{
+    ViewData["Title"] = "Delete Actor";
+}
+<div class="hero common-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1> Delete Actor</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Back</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span> actor removing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-single movie_list">
+    <div class="container">
+        <div class="row ipad-width2">
+
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="searh-form">
+                        <h4 class="sb-title">Delete confirmation for @Model.FullName</h4>
+                        <div class="row" style="color: #abb7c4;">
+                            <div class="col-md-12 form-it" style="display:flex; justify-content:center">
+                                <img id="ProfilePicturePreview" />
+                            </div>
+                            <div class="col-md-12 form-it">
+                                <label asp-for="ProfilePictureURL"></label>
+                                <input asp-for="ProfilePictureURL" readonly />
+                                <span asp-validation-for="ProfilePictureURL" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 form-it">
+                                <label asp-for="FullName"></label>
+                                <input asp-for="FullName" readonly />
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 form-it">
+                                <label asp-for="Bio"></label>
+                                <input asp-for="Bio" readonly />
+                                <span asp-validation-for="Bio" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <form asp-action="Delete">
+                                    <input type="hidden" asp-asp-for="Id" />
+                                    <input class="redbtn" type="submit" value="Confirm" style="margin:15px; float:right" />
+                                </form>
+                                <a asp-action="Index" class="redbtn" style="margin:15px; float:left">
+                                    <i class="fa fa-rotate-back"></i>
+                                    Show All
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#ProfilePictureURL").val();
+
+        })
+
+    </script>
+}
+
+
