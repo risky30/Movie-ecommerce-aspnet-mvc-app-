@@ -1,0 +1,60 @@
+﻿@*
+   Producer details
+*@
+
+@model Producer
+
+@{
+    ViewData["Title"] = "Producers Details";
+}
+
+<div class="hero common-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1>Producers</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span>Details of Producer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- producers list section-->
+<div class="page-single">
+    <div class="container">
+        <div class="row ipad-width2">
+            <div class="row" style="display:flex; justify-content:center">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="ceb-item-style-2">
+                        <a href="#"><img src="@Html.DisplayFor(model => model.ProfilePictureURL)" alt="@Html.DisplayFor(model => model.FullName)" style="width:350px"></a>
+                        <div class="ceb-infor">
+                            <h2><a href="#">@Html.DisplayFor(model => model.FullName)</a></h2> <br>
+                            <p>@Html.DisplayFor(model => model.Bio)</p>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; justify-content:center">
+                        <a asp-action="Index" class="redbtn" style="margin:15px; float:left">
+                            <i class="fa fa-rotate-back"></i>
+                            Show All
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@Model.Id" class="redbtn" style="margin:15px">
+                            <i class="fa fa-trash"></i>
+                            Delete
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="redbtn" style="margin:15px; float:right">
+                            <i class="fa fa-edit"></i>
+                            Edit
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of producers section-->

@@ -1,0 +1,86 @@
+﻿@*
+    edit actor
+*@
+
+@model Actor
+
+@{
+    ViewData["Title"] = "Edit actor";
+}
+<div class="hero common-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1> Update Actor</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Back</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span> actor listing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-single movie_list">
+    <div class="container">
+        <div class="row ipad-width2">
+
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="searh-form">         
+                        <form class="form-style-1" asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" style="color:red"></div>
+                            <div class="row">
+                                <div class="col-md-12 form-it" style="display:flex; justify-content:center">
+                                    <img id="ProfilePicturePreview" />
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label asp-for="ProfilePictureURL"></label>
+                                    <input asp-for="ProfilePictureURL"/>
+                                    <span asp-validation-for="ProfilePictureURL" style="color:red"></span>
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label asp-for="FullName"></label>
+                                    <input asp-for="FullName"/>
+                                    <span asp-validation-for="FullName" style="color:red"></span>
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label asp-for="Bio"></label>
+                                    <input asp-for="Bio"/>
+                                    <span asp-validation-for="Bio" style="color:red"></span>
+                                </div>
+
+                                <div class="form-group">                              
+                                    <a asp-action="Index" class="redbtn" style="margin:15px; float:left">
+                                        <i class="fa fa-rotate-back"></i>
+                                        Show All
+                                    </a>
+                                    <input class="redbtn" type="submit" value="Update" style="margin:15px; float:right" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#ProfilePictureURL").val();
+
+        })
+
+        $("#ProfilePictureURL").on("change", function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $(this).val();
+        })
+    </script>
+}
+
+

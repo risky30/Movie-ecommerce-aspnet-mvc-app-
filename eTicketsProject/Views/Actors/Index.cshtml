@@ -1,0 +1,52 @@
+﻿@*
+    Actor
+*@
+
+@model IEnumerable<Actor>
+
+@{
+    ViewData["Title"] = "List of Actors";
+}
+<div class="hero common-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1>Actors</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span> Actors listing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- actors list section-->
+<div class="page-single">
+    <div class="container">
+        <div class="row ipad-width2">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="ceb-item-style-2">
+                            <a asp-action="Details" asp-route-id="@item.Id"><img src="@item.ProfilePictureURL" alt="@item.FullName"></a>
+                            <div class="ceb-infor">
+                                <h2><a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.FullName )</a></h2> <br>
+                                <span>actor, uk</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div style="float:right; margin-right:10px">
+            <a asp-action="Create" class="redbtn">
+                <i class="fa fa-circle-plus"></i>
+                Add New
+            </a>
+        </div>
+    </div>
+</div>
+<!-- end of actors section-->

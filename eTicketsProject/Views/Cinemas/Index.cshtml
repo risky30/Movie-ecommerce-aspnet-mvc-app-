@@ -1,0 +1,56 @@
+﻿@*
+    cinemas
+*@
+@model IEnumerable<Cinema>
+
+@{
+    ViewData["Title"] = "List of Cinemas";
+}
+<div class="hero common-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-ct">
+                    <h1>Cinemas</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span> Cinemas listing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cinemas list section-->
+<div class="page-single">
+    <div class="container">
+        <div class="row ipad-width2">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="ceb-item-style-2" style="margin-bottom:10px">
+                            <a asp-action="Details" asp-route-id="@item.Id"><img src="@item.Logo" alt="@item.Name"></a>
+                            <div class="ceb-infor">
+                                <h2><a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name )</a></h2> <br>
+                                <p>@Html.DisplayFor(modelItem => item.Description )</p>
+                            </div>
+                        </div>
+                        <div style="float:right; margin-bottom:20px">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary"><i class="fa fa-pencil"></i>Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="fa fa-trash"></i>Delete</a>
+                        </div>
+                    </div>
+             
+                }
+            </div>
+        </div>
+        <div style="float:right; margin-right:10px">
+            <a asp-action="Create" class="redbtn">
+                <i class="fa fa-circle-plus"></i>
+                Add New
+            </a>
+        </div>
+    </div>
+</div>
+<!-- end of cinemas section-->
