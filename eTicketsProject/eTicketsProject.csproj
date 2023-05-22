@@ -30,8 +30,11 @@
     <Folder Include="wwwroot\videos\" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
+=======
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
 </Project>

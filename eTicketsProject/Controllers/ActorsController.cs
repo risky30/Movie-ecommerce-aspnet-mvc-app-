@@ -7,8 +7,13 @@ namespace eTicketsProject.Controllers
 {
     public class ActorsController : Controller
     {
+<<<<<<< HEAD
         private readonly IActorsService _service;
         public ActorsController(IActorsService service)
+=======
+        private readonly IActorsServices _service;
+        public ActorsController(IActorsServices service)
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
         {
             _service = service;
         }
@@ -29,8 +34,13 @@ namespace eTicketsProject.Controllers
         {
             if (!ModelState.IsValid) return View(actor);
             await _service.AddAsync(actor);
+<<<<<<< HEAD
 
             return RedirectToAction(nameof(Details), new { id = actor.Id });
+=======
+            
+            return RedirectToAction(nameof(Index));
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
         }
 
         //Get: Actors/Details/1
@@ -53,12 +63,17 @@ namespace eTicketsProject.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio ")] Actor actor)
         {
             if (!ModelState.IsValid) return View(actor);
+<<<<<<< HEAD
             if (id == actor.Id)
             {
                 await _service.UpdateAsync(id, actor);
                 return RedirectToAction(nameof(Details), new { id = actor.Id });
             }
             return View(actor);     
+=======
+            await _service.UpdateAsync(id, actor);
+            return RedirectToAction(nameof(Index));
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
         }
 
 

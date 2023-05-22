@@ -29,6 +29,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="col-md-6 col-sm-12 col-xs-12">
+<<<<<<< HEAD
                         <div class="ceb-item-style-2" style="margin-bottom:10px">
                             <a asp-action="Details" asp-route-id="@item.Id"><img src="@item.Logo" alt="@item.Name"></a>
                             <div class="ceb-infor">
@@ -39,18 +40,34 @@
                         <div style="float:right; margin-bottom:20px">
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary"><i class="fa fa-pencil"></i>Edit</a> |
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="fa fa-trash"></i>Delete</a>
+=======
+                        <div class="ceb-item-style-2">
+                            <a href="#"><img src="@item.Logo" alt="@item.Name"></a>
+                            <div class="ceb-infor">
+                                <h2><a href="#">@Html.DisplayFor(modelItem => item.Name )</a></h2> <br>
+                                <p>@Html.DisplayFor(modelItem => item.Description )</p>
+                            </div>
+                        </div>
+                        <div style="float:right">
+                            <a class="btn btn-outline-primary"><i class="fa fa-pencil"></i>Edit</a> |
+                            <a class="btn btn-outline-info"><i class="fa fa-eye"></i>Details</a> |
+                            <a class="btn btn-outline-danger"><i class="fa fa-trash"></i>Edit</a>
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
                         </div>
                     </div>
              
                 }
             </div>
         </div>
+<<<<<<< HEAD
         <div style="float:right; margin-right:10px">
             <a asp-action="Create" class="redbtn">
                 <i class="fa fa-circle-plus"></i>
                 Add New
             </a>
         </div>
+=======
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
     </div>
 </div>
 <!-- end of cinemas section-->

@@ -1,6 +1,9 @@
 ﻿using eTicketsProject.Data;
+<<<<<<< HEAD
 using eTicketsProject.Data.Services;
 using eTicketsProject.Models;
+=======
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +11,7 @@ namespace eTicketsProject.Controllers
 {
     public class CinemasController : Controller
     {
+<<<<<<< HEAD
         private readonly ICinemasService _service;
         public CinemasController(ICinemasService service)
         {
@@ -74,5 +78,17 @@ namespace eTicketsProject.Controllers
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
+=======
+        private readonly AppDbContext _context;
+        public CinemasController(AppDbContext context)
+        {
+            _context = context;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var allCinemas = await _context.Cinemas.ToListAsync();
+            return View(allCinemas);
+        }
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
     }
 }

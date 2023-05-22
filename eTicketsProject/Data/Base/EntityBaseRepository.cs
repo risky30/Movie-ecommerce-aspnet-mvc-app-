@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using eTicketsProject.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -41,5 +42,11 @@ namespace eTicketsProject.Data.Base
 
             await _context.SaveChangesAsync();
         }
+=======
+﻿namespace eTicketsProject.Data.Base
+{
+    public class EntityBaseRepository
+    {
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
     }
 }

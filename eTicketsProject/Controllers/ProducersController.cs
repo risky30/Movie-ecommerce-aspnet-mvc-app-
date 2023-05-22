@@ -1,7 +1,10 @@
 ﻿using eTicketsProject.Data;
+<<<<<<< HEAD
 using eTicketsProject.Data.Services;
 using eTicketsProject.Models;
 using Microsoft.AspNetCore.Authorization;
+=======
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +12,7 @@ namespace eTicketsProject.Controllers
 {
     public class ProducersController : Controller
     {
+<<<<<<< HEAD
         private readonly IProducersService _service;
 
         public ProducersController(IProducersService service)
@@ -82,5 +86,18 @@ namespace eTicketsProject.Controllers
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
+=======
+        private readonly AppDbContext _context;
+
+        public ProducersController(AppDbContext context)
+        {
+            _context = context;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var allProducers = await _context.Producers.ToListAsync();
+            return View(allProducers);
+        }
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
     }
 }

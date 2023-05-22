@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using eTicketsProject.Data.Base;
 using System.ComponentModel.DataAnnotations;
 
@@ -20,6 +21,20 @@ namespace eTicketsProject.Models
 
         [MinLength(30, ErrorMessage = "Description should contains at least 30 chars !")]
         [Required(ErrorMessage = "A Description is required !")]   
+=======
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace eTicketsProject.Models
+{
+    public class Cinema
+    {
+        [Key]
+        public int Id { get; set; }
+        [Display(Name = "Cinema Logo")]
+        public string? Logo { get; set; }
+        [Display(Name = "Name")]
+        public string? Name { get; set; }
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
         [Display(Name = "Description")]
         public string? Description { get; set; }
 

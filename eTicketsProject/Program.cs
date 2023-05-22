@@ -9,13 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"))); //connection string from the appsetting.json file
 
+<<<<<<< HEAD
 //Services configuration
 builder.Services.AddScoped<IActorsService, ActorsService>();
 builder.Services.AddScoped<IProducersService, ProducersService>();
 builder.Services.AddScoped<ICinemasService, CinemasService>();
 
+=======
+>>>>>>> 2dc6d8cf8efa28acac0a3b7359a0c3f2cd596130
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Services configuration
+builder.Services.AddScoped<IActorsServices, ActorsService>();
 
 var app = builder.Build();
 
